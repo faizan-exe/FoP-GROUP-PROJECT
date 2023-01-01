@@ -224,16 +224,6 @@ int main(){
 
     char line[1024];
 
-    int retval = 0;
-    regex_t re;
-    regmatch_t rm[2];
-
-    if (regcomp(&re, "[A-Z][A-Z][A-Z]\\-[0-9][0-9][0-9]", REG_EXTENDED) != 0)
-    {
-        fprintf(stderr, "Failed to compile regex '%s'\n", "[A-Z][A-Z][A-Z]\\-[0-9][0-9][0-9]");
-    }
-
-
     int i = 0;
 
     printf("\nEnter the no. of hours of you want to park the car: ");
@@ -419,7 +409,7 @@ int main(){
 
                             char teststr1[50] = "100";
 
-                            if (is_regex("[A-Z][A-Z][A-Z]\-[0-9][0-9][0-9]", "Monthlycountfile.txt", carnum)){
+                            if (is_regex("[A-Z][A-Z][A-Z]\\-[0-9][0-9][0-9]", "Monthlycountfile.txt", carnum)){
 
                                 char **check1;
                                 check1 = search_regex(line3, "[0-9]?[0-9]?[0-9]$");
